@@ -39,7 +39,36 @@
         <p>Save more with coupons $ up to 7-0% off!</p>
         <button>Shop now</button>
     </section>
-
+    <section id="login-user">
+        <div class="login-box">
+            <h2>Login</h2>
+            <form>
+                <div class="user-box">
+                    <input type="text" name="" required="" class="user">
+                    <label>Username</label>
+                </div>
+                <div class="user-box">
+                    <input type="password" name="" required="" class="password">
+                    <label>Password</label>
+                </div>
+                <div class="login">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <button id="submit-account" class="normal">SUBMIT</button>
+                </div>
+                <div class="login">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <button id="forget-password" class="normal">FORGET PASSWORD</button>
+                </div>
+            </form>
+        </div>
+        <button id="close-login" class="normal">Close</button>
+    </section>
     <section id="feature" class="section-p1">
         <div class="fe-box">
             <img src="./img/features/f1.png" alt="">
@@ -465,15 +494,8 @@
             <p>@ 2021, Eri Dev - HTML CSS Ecommerce Shop</p>
         </div>
     </footer>
-    <script>
-        var pro = document.querySelectorAll(".pro");
-        pro.forEach((item, index) => {
-            item.addEventListener("click", () => {
-                window.location.href = `sproduct${index}.html`;
-            })
-        })
+    <script src="login.js">
     </script>
-    <script src="app.js"></script>
 </body>
 </html>
 

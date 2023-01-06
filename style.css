@@ -1,10 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 * {
+
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Spartan", sans-serif;
+}
+
+body {
+    -ms-overflow-style: none;
+    /* cho  Internet Explorer, Edge */
+    scrollbar-width: none;
+    /* cho Firefox */
+    overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+    /* cho Chrome, Safari, and Opera */
 }
 
 html {
@@ -140,7 +154,7 @@ body {
 /* Home Page */
 
 #hero{
-    background-image: url(/img/hero4.png);
+    background-image: url(./img/hero4.png);
     height: 90vh;
     width: 100%;
     background-position: top 25% right 0;
@@ -161,7 +175,7 @@ body {
 }
 
 #hero button{
-    background-image: url(/img/button.png);
+    background-image: url(./img/button.png);
     background-color: transparent;
     color:#088178;
     border: none;
@@ -308,7 +322,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url(/img/banner/b2.jpg);
+    background-image: url(./img/banner/b2.jpg);
     width: 100%;
     height: 40vh;
     background-size: cover;
@@ -346,7 +360,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    background-image: url(/img/banner/b17.jpg);
+    background-image: url(./img/banner/b17.jpg);
     min-width: 48%;
     height: 50vh;
     background-size: cover;
@@ -355,7 +369,7 @@ body {
 }
 
 #sm-banner .banner-box2{
-    background-image: url(/img/banner/b10.jpg);
+    background-image: url(./img/banner/b10.jpg);
 }
 
 #sm-banner h4{
@@ -394,7 +408,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    background-image: url(/img/banner/b7.jpg);
+    background-image: url(./img/banner/b7.jpg);
     min-width: 30%;
     height: 30vh;
     background-size: cover;
@@ -404,11 +418,11 @@ body {
 }
 
 #banner3 .banner-box2{
-    background-image: url(/img/banner/b4.jpg);
+    background-image: url(./img/banner/b4.jpg);
 }
 
 #banner3 .banner-box3 {
-    background-image: url(/img/banner/b18.jpg);
+    background-image: url(./img/banner/b18.jpg);
 }
 
 #banner3 h2{
@@ -428,7 +442,7 @@ body {
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
-    background-image: url(/img/banner/b14.png);
+    background-image: url(./img/banner/b14.png);
     background-repeat: no-repeat;
     background-position:20% 30%;
     background-color: #041e42;
@@ -552,7 +566,7 @@ footer .copyright{
     align-items: center;
     flex-direction: column;
     background-size: cover;
-    background-image: url("/img/banner/b1.jpg");
+    background-image: url("./img/banner/b1.jpg");
 }
 
 #page-header h2,
@@ -648,7 +662,7 @@ footer .copyright{
 /* Blog Page */
 
 #page-header.blog-header{
-    background-image: url("/img/banner/b19.jpg");
+    background-image: url("./img/banner/b19.jpg");
 }
 
 #blog{
@@ -717,7 +731,7 @@ footer .copyright{
 /* About Page */
 
 #page-header.about-header {
-    background-image: url("/img/about/banner.png");
+    background-image: url("./img/about/banner.png");
 }
 
 #about-head{
@@ -974,6 +988,223 @@ footer .copyright{
     padding: 10px;
     font-size: 13px;
 
+}
+
+
+/* Login */
+#login-user{
+    position: absolute;
+    top: -100%;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(#141e30, #243b55);
+    z-index: 999;
+    /* animation: showLogin 1s ease forwards; */
+}
+
+@keyframes showLogin {
+    form{
+        opacity: 0;
+    }to{
+        opacity: 1;
+        top: 0;
+    }
+    
+}
+
+@keyframes endLogin{
+    form {
+        opacity: 1;
+        top: 0;
+    }
+
+    to {
+        opacity: 0;
+        top: -100;
+    }
+
+}
+#login-user .login-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, .5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    border-radius: 10px;
+}
+
+#login-user .login-box h2{
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
+
+#login-user .login-box .user-box{
+    position: relative;
+}
+
+#login-user .login-box .user-box input{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+
+#login-user .login-box .user-box label {
+    position: absolute;
+    top: 26px;
+    left: 0;
+    padding: 4px 12px;
+    font-size: 13px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+#login-user .login-box .user-box input:focus~label,
+#login-user .login-box .user-box input:valid~label {
+    top: -4px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 12px;
+}
+
+#login-user .login-box form div {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    color: #03e9f4;
+    font-size: 16px;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px
+}
+
+#login-user .login-box .login:hover {
+    background: #03e9f4;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4,
+        0 0 25px #03e9f4,
+        0 0 50px #03e9f4,
+        0 0 100px #03e9f4;
+}
+
+#login-user .login-box .login span {
+    position: absolute;
+    display: block;
+}
+
+#login-user .login-box .login span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: btn-anim1 1s linear infinite;
+}
+
+#submit-account,
+#forget-password{
+    color: #03e9f4;
+    background: transparent;
+    width: 100%;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes btn-anim1 {
+    0% {
+        left: -100%;
+    }
+
+    50%,
+    100% {
+        left: 100%;
+    }
+}
+
+#login-user .login-box .login span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+    0% {
+        top: -100%;
+    }
+
+    50%,
+    100% {
+        top: 100%;
+    }
+}
+
+#login-user .login-box .login span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+    0% {
+        right: -100%;
+    }
+
+    50%,
+    100% {
+        right: 100%;
+    }
+}
+
+#login-user .login-box .login span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: .75s
+}
+
+@keyframes btn-anim4 {
+    0% {
+        bottom: -100%;
+    }
+
+    50%,
+    100% {
+        bottom: 100%;
+    }
+}
+
+#login-user #close-login{
+    background-color: transparent;
+    color: #fff;
 }
 
 /* Start Media Query */
@@ -1248,4 +1479,7 @@ footer .copyright{
     #subtotal button{
         padding: 20px;
     }
+
+    /* Login User */
+    
 }
